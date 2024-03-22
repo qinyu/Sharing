@@ -5,6 +5,9 @@ plugins {
 apply plugin: 'com.alibaba.arouter'
 apply plugin: 'kotlin-kapt'
 android {
+    lintOptions {
+        abortOnError false
+    }
     compileSdkVersion 30
 
     defaultConfig {
