@@ -5,11 +5,11 @@ plugins {
 apply plugin: 'com.alibaba.arouter'
 apply plugin: 'kotlin-kapt'
 android {
-    lintOptions {
-        abortOnError false
-    }
     compileSdkVersion 30
 
+    lintOptions {
+        baseline file("lint-baseline.xml")
+    }
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 30
