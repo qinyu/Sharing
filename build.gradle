@@ -26,6 +26,35 @@ allprojects {
     }
 }
 
+subprojects {
+    def configureLint = {
+        def baseLineFilePath = "$projectDir/lint-baseline.xml"
+
+        // set lint options for all android modules
+        android {
+            lintOptions {
+                baseline file(baseLineFilePath)
+                checkDependencies false
+                checkReleaseBuilds true
+                abortOnError true
+            }
+        }
+
+        // Add a task to delete the baseline file
+        tasks.register("cleanLintBaseline", Delete) {
+            delete file("$projectDir/lint-baseline.xml")
+        }
+    }
+
+    afterEvaluate {
+        // apply lint configuration to all android app modules
+        plugins.withType(com.android.build.gradle.AppPlugin, configureLint)
+        // apply lint configuration to all android library modules
+        plugins.withType(com.android.build.gradle.LibraryPlugin, configureLint)
+    }
+}
+
+
 
 task clean(type: Delete) {
     delete rootProject.buildDir

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<issues format="5" by="lint 4.1.1" client="gradle" variant="debug" version="4.1.1">
+<issues format="5" by="lint 4.1.1" client="gradle" variant="all" version="4.1.1">
 
     <issue
         id="OldTargetApi"
@@ -234,7 +234,7 @@
 
     <issue
         id="GradleDependency"
-        message="A newer version of androidx.databinding:databinding-compiler than 7.4.0-alpha01 is available: 8.5.0-alpha01"
+        message="A newer version of androidx.databinding:databinding-compiler than 7.4.0-alpha01 is available: 8.5.0-alpha03"
         errorLine1="    kaptTest &quot;androidx.databinding:databinding-compiler:7.4.0-alpha01&quot;"
         errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location

@@ -20,6 +20,12 @@ android {
         }
     }
 
+    flavorDimensions("project")
+    productFlavors {
+        e245 { dimension "project" }
+        p145 { dimension "project" }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
